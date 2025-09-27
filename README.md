@@ -10,6 +10,7 @@
 
 ## ⭐个人认知
 学习是一个永无止境的过程，你知道的越多，你不知道的也会越多，在有限的时间内坚持每天多学一点，你一定能成为你想要成为的那个人。不积跬步无以至千里，不积小流无以成江海！
+
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=shenchuanchao)
 
 <!--
