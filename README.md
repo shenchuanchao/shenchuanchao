@@ -9,6 +9,9 @@
 * 不要相信互联网是年轻人的行业，请保持你的初心。
 * 互联网行业的技术瞬息万变，请时刻保持你学习的动力。
 
+## ⭐个人认知
+学习是一个永无止境的过程，你知道的越多，你不知道的也会越多，在有限的时间内坚持每天多学一点，你一定能成为你想要成为的那个人。不积跬步无以至千里，不积小流无以成江海！
+
 <!--
 **shenchuanchao/shenchuanchao** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
