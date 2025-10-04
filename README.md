@@ -30,7 +30,7 @@
 一个热爱开源的全栈软件工程师，擅长C#、.NET、.NET Core、Vue、Angular等相关技术开发。有分布式、微服务应用，云原生应用，微信Web应用、小程序，H5移动端应用，企业Web应用（ERP，CRM，OA等系统）设计和开发经验。
 
 * [✍️知乎](https://www.zhihu.com/people/shenchuanchao)、[👨‍🎓CSDN](https://blog.csdn.net/SC2LQ)、[🥇博客园](https://www.cnblogs.com/shenchuanchao)、[💥51CTO](https://blog.51cto.com/shenchuanchao)、[🏆阿里云社区](https://developer.aliyun.com/profile/d6ulnhpjuyoye?spm=a2c6h.13262185.profile.4.3242618cd8oPL9)、[💯腾讯云社区](https://cloud.tencent.com/developer/user/11675143)
-* [👨‍💻GitHub](https://github.com/shenchuanchao)、[🦸‍♂️Gitee](https://gitee.com/shenchuanchao99)、🎉华为云社区、🕹掘金、🌋火山引擎开发者社区
+* [👨‍💻GitHub](https://github.com/shenchuanchao)、[🦸‍♂️Gitee](https://gitee.com/shenchuanchao99)、[🎉华为云社区](https://developer.huaweicloud.com/usercenter/mycommunity/dynamics)、🕹掘金、🌋火山引擎开发者社区
 
 ## 💥行业认知
 无论你是在校学生或者是初入职场的小白还是久经职场的老司机，都要对互联网这个行业有一个正确的认知和觉悟：
