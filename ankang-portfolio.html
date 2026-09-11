@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沈川超 · 安康产业数字化的本地技术合伙人</title>
+<meta name="description" content="安康市汉滨区人，深圳.NET工程师6年经验。提供富硒产品溯源系统、小程序/微商城、企业管理系统、官网定制。深圳标准，安康服务，随叫随到。">
+<!-- SEO 占位：上线前替换为你的真实介绍，并补充 Open Graph 标签 -->
+<!-- 统计占位：部署后在此处粘贴百度统计 / 51LA 代码 -->
+
+<style>
+/* ============================================================
+   设计令牌
+   ============================================================ */
+:root{
+  --primary:#8BC8EA;          /* 主色：科技蓝 */
+  --primary-dark:#1F4E66;     /* 主色深（文字/标题用） */
+  --primary-bg:rgba(139,200,234,0.14);
+  --text:#1A1B1C;
+  --text-2:#4B5563;
+  --text-3:#6B7280;
+  --bg:#F4F3EE;               /* 页面暖白底 */
+  --card:#FFFFFF;
+  --border:rgba(0,0,0,0.08);
+  --green:#2F6B0F;
+  --radius:14px;
+  --shadow:0 1px 3px rgba(0,0,0,0.06);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'PingFang SC','Microsoft YaHei','Segoe UI',Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+
+.container{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+/* 通用区块头 */
+.section{padding:64px 0;}
+.section-tag{
+  display:inline-block;font-size:12px;letter-spacing:2px;color:var(--primary-dark);
+  background:var(--primary-bg);padding:4px 12px;border-radius:20px;margin-bottom:12px;
+}
+.section-title{font-size:26px;font-weight:700;margin-bottom:8px;}
+.section-sub{font-size:14px;color:var(--text-2);margin-bottom:32px;max-width:640px;}
+
+/* ============================================================
+   顶部导航（固定）
+   ============================================================ */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.brand{font-size:17px;font-weight:700;color:var(--primary-dark);}
+.brand small{font-size:11px;color:var(--text-3);font-weight:400;margin-left:6px;}
+
+.nav-links{display:flex;align-items:center;gap:22px;font-size:14px;color:var(--text-2);}
+.nav-links a:hover{color:var(--primary-dark);}
+
+.btn{
+  display:inline-block;background:var(--primary);color:#fff;font-size:14px;font-weight:600;
+  padding:9px 18px;border-radius:24px;border:none;cursor:pointer;transition:opacity .2s;
+}
+.btn:hover{opacity:.85;}
+.btn-outline{background:transparent;border:1px solid var(--primary);color:var(--primary-dark);}
+
+/* 移动端菜单按钮 */
+.nav-toggle{display:none;background:none;border:none;font-size:22px;color:var(--primary-dark);cursor:pointer;padding:6px;}
+
+/* ============================================================
+   ① Hero 首屏
+   ============================================================ */
+.hero{
+  background:
+    linear-gradient(180deg, rgba(244,243,238,0.92) 0%, rgba(244,243,238,0.55) 100%),
+    linear-gradient(135deg, #A8D8C6 0%, #8BC8EA 55%, #7FA8C9 100%);
+  text-align:center;padding:96px 20px 72px;
+}
+.hero h1{font-size:34px;font-weight:800;color:var(--primary-dark);margin-bottom:14px;}
+.hero .sub{font-size:16px;color:var(--text-2);max-width:640px;margin:0 auto 8px;}
+.hero .sub2{font-size:14px;color:var(--text-3);margin-bottom:30px;}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.hero .note{font-size:12px;color:var(--text-3);margin-top:18px;}
+/* 背景图占位：如需实拍图，替换 .hero 背景为 <img> 或 url(images/xx.jpg)，推荐富硒茶园/毛绒玩具车间/安康山水 */
+
+/* ============================================================
+   ② 信任条
+   ============================================================ */
+.trust{padding:28px 0;background:var(--card);border-bottom:1px solid var(--border);}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.trust-item{text-align:center;}
+.trust-item .num{font-size:26px;font-weight:800;color:var(--primary-dark);}
+.trust-item .num span{font-size:14px;font-weight:400;color:var(--text-3);}
+.trust-item .label{font-size:12.5px;color:var(--text-2);margin-top:2px;}
+/* 数字为【占位】：上线前用真实数据替换，未实测不填数字 */
+
+/* ============================================================
+   ③ 服务模块
+   ============================================================ */
+.service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px;box-shadow:var(--shadow);transition:transform .2s;
+}
+.card:hover{transform:translateY(-3px);}
+.card .ico{font-size:26px;margin-bottom:10px;}
+.card h3{font-size:16px;margin-bottom:8px;}
+.card p{font-size:13px;color:var(--text-2);}
+.card .tag{
+  display:inline-block;font-size:11px;color:var(--primary-dark);background:var(--primary-bg);
+  padding:2px 8px;border-radius:10px;margin-top:10px;margin-right:6px;
+}
+
+/* ============================================================
+   ④ 案例模块
+   ============================================================ */
+.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.case{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:20px;position:relative;
+}
+.case .badge{
+  position:absolute;top:14px;right:14px;font-size:11px;color:var(--green);
+  background:rgba(82,196,26,0.12);padding:2px 10px;border-radius:10px;
+}
+.case img{
+  width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;
+  border-radius:10px;margin:10px 0 12px;background:#EDECE6;
+}
+.case h3{font-size:15px;margin-bottom:8px;}
+.case ul{font-size:13px;color:var(--text-2);}
+.case li{padding:3px 0;}
+.case li b{color:var(--text);font-weight:600;}
+.case-empty{
+  border:2px dashed var(--border);border-radius:var(--radius);padding:34px;text-align:center;
+  color:var(--text-3);font-size:13px;background:rgba(255,255,255,0.5);
+}
+
+/* ============================================================
+   ⑤ 关于我
+   ============================================================ */
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:start;}
+.about-text p{font-size:14px;color:var(--text-2);margin-bottom:12px;}
+.skill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.skill-list li{font-size:12.5px;background:var(--primary-bg);color:var(--primary-dark);padding:5px 12px;border-radius:16px;}
+.avatar{
+  width:120px;height:120px;border-radius:50%;object-fit:cover;
+  border:3px solid #FFFFFF;box-shadow:var(--shadow);margin-bottom:14px;background:#EDECE6;
+}
+.about-diff{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;}
+.about-diff h3{font-size:15px;margin-bottom:10px;}
+.about-diff li{
+  font-size:13px;color:var(--text-2);padding:7px 0 7px 24px;position:relative;
+}
+.about-diff li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700;}
+
+/* ============================================================
+   ⑥ 合作流程
+   ============================================================ */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;}
+.step{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;text-align:center;position:relative;}
+.step .n{
+  width:30px;height:30px;line-height:30px;border-radius:50%;background:var(--primary);color:#fff;
+  font-size:14px;font-weight:700;margin:0 auto 8px;
+}
+.step h4{font-size:14px;margin-bottom:4px;}
+.step p{font-size:12px;color:var(--text-3);}
+
+/* ============================================================
+   ⑦ 联系 CTA
+   ============================================================ */
+.contact{background:linear-gradient(135deg, rgba(139,200,234,0.16), rgba(139,200,234,0.06));}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.contact-info p{font-size:14px;color:var(--text-2);margin-bottom:10px;}
+.hook{
+  background:rgba(82,196,26,0.10);border-left:4px solid #52C41A;border-radius:10px;
+  padding:14px 16px;font-size:14px;color:var(--green);margin-top:16px;
+}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+.contact-form label{display:block;font-size:13px;color:var(--text-2);margin:12px 0 4px;}
+.contact-form input,.contact-form textarea{
+  width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;
+  font-size:14px;font-family:inherit;background:#FBFBFA;
+}
+.contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--primary);}
+.contact-form textarea{min-height:90px;resize:vertical;}
+.contact-form .btn{width:100%;margin-top:16px;}
+
+/* ============================================================
+   ⑧ 页脚
+   ============================================================ */
+.site-footer{border-top:1px solid var(--border);padding:28px 0;font-size:12.5px;color:var(--text-3);text-align:center;}
+.site-footer a{color:var(--text-2);}
+
+/* 回到顶部 */
+#backTop{
+  position:fixed;right:22px;bottom:22px;width:40px;height:40px;border-radius:50%;
+  background:var(--primary);color:#fff;border:none;font-size:18px;cursor:pointer;
+  opacity:0;pointer-events:none;transition:opacity .25s;z-index:90;
+}
+#backTop.show{opacity:1;pointer-events:auto;}
+
+/* ============================================================
+   响应式（移动端 ≤768px）
+   ============================================================ */
+@media (max-width:768px){
+  .section{padding:44px 0;}
+  .hero{padding:64px 16px 48px;}
+  .hero h1{font-size:26px;}
+  .nav-links{
+    display:none;position:absolute;top:60px;left:0;right:0;background:#fff;
+    flex-direction:column;gap:0;border-bottom:1px solid var(--border);box-shadow:var(--shadow);
+  }
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:14px 20px;width:100%;border-top:1px solid var(--border);}
+  .nav-links .btn{margin:12px 20px 16px;width:auto;align-self:flex-start;}
+  .nav-toggle{display:block;}
+  .trust-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:20px;}
+  .contact-form{padding:18px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ══════════════ 顶部导航 ══════════════ -->
+<header class="site-header">
+  <nav class="container nav" aria-label="主导航">
+    <a href="#hero" class="brand">沈川超<small>安康 · 深圳</small></a>
+
+    <!-- 移动端菜单按钮 -->
+    <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#services">服务</a>
+      <a href="#cases">案例</a>
+      <a href="#about">关于</a>
+      <a href="#process">流程</a>
+      <a href="#contact">联系</a>
+      <a href="#contact" class="btn">免费咨询</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ══════════════ ① Hero 首屏 ══════════════ -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1>安康产业数字化的<br>本地技术合伙人</h1>
+      <p class="sub">6 年 .NET / ERP / 小程序开发经验，深圳标准，安康服务。</p>
+      <p class="sub2">专注富硒溯源 · 电商小程序 · 企业管理系统的定制开发</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">免费获取方案</a>
+        <a href="#services" class="btn btn-outline">看看能做什么</a>
+      </div>
+      <p class="note">安康本地服务 · 随叫随到 · 【可加一句你的承诺或微信】</p>
+    </div>
+  </section>
+
+  <!-- ══════════════ ② 信任条 ══════════════ -->
+  <section class="trust" id="trust" aria-label="数据背书">
+    <div class="container trust-grid">
+      <!-- 数字为占位：上线前替换为实测数据，未实测不写数字 -->
+      <div class="trust-item"><div class="num">6<span>年</span></div><div class="label">开发经验</div></div>
+      <div class="trust-item"><div class="num">【X】</div><div class="label">项目交付</div></div>
+      <div class="trust-item"><div class="num">【X】</div><div class="label">本地企业服务</div></div>
+      <div class="trust-item"><div class="num">2<span>城</span></div><div class="label">深圳 · 安康</div></div>
+    </div>
+  </section>
+
+  <!-- ══════════════ ③ 服务模块 ══════════════ -->
+  <section class="section" id="services">
+    <div class="container">
+      <span class="section-tag">SERVICES</span>
+      <h2 class="section-title">能为你做什么</h2>
+      <p class="section-sub">四个方向，覆盖安康特色产业最常见的数字化需求。每个项目都是定制开发，不卖模板。</p>
+
+      <div class="service-grid">
+        <div class="card">
+          <div class="ico">🔍</div>
+          <h3>富硒产品溯源系统</h3>
+          <p>一物一码，扫码看产地、检测、批次。解决客户信任问题，给电商加防伪背书。</p>
+          <span class="tag">.NET API</span><span class="tag">小程序</span><span class="tag">二维码</span>
+        </div>
+        <div class="card">
+          <div class="ico">🛒</div>
+          <h3>小程序 / 微商城</h3>
+          <p>电商、会员、拼团分销，对接支付和快递。帮你把线下生意搬到微信里。</p>
+          <span class="tag">uni-app</span><span class="tag">微信支付</span>
+        </div>
+        <div class="card">
+          <div class="ico">📊</div>
+          <h3>企业管理系统</h3>
+          <p>进销存、订单、审批、报表定制。告别 Excel 和微信群对账，数据自己说话。</p>
+          <span class="tag">.NET</span><span class="tag">Web</span><span class="tag">ERP/OA</span>
+        </div>
+        <div class="card">
+          <div class="ico">🌐</div>
+          <h3>官网 / 门户定制</h3>
+          <p>企业官网、产业平台、招商页面，含基础 SEO，让客户在线上找得到你。</p>
+          <span class="tag">静态/轻CMS</span><span class="tag">SEO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ ④ 案例模块 ══════════════ -->
+  <section class="section" id="cases" style="background:#EDECE6;">
+    <div class="container">
+      <span class="section-tag">CASES</span>
+      <h2 class="section-title">做过的项目</h2>
+      <p class="section-sub">以下为灯塔案例位，先占位、后填充——用「行业 → 痛点 → 方案 → 效果」的结构写，效果数字用真实数据。配图为产业示意占位图，上线前替换为真实案例截图。</p>
+
+      <div class="case-grid">
+        <!-- 案例1：富硒茶企（占位） -->
+        <article class="case">
+          <span class="badge">灯塔案例</span>
+          <!-- 示意占位图：上线前替换为该企业真实案例截图（建议16:9） -->
+          <img src="images/case-se-tea.jpg" alt="富硒茶园示意占位图，上线前替换为真实案例截图">
+          <h3>【富硒茶企】溯源 + 微商城</h3>
+          <ul>
+            <li><b>痛点：</b>【产品无防伪、电商缺信任背书】</li>
+            <li><b>方案：</b>【一物一码溯源 + 小程序商城】</li>
+            <li><b>效果：</b>【扫码率 / 复购率，待实测】</li>
+          </ul>
+        </article>
+
+        <!-- 案例2：毛绒玩具厂（占位） -->
+        <article class="case">
+          <span class="badge">灯塔案例</span>
+          <!-- 示意占位图：上线前替换为该企业真实案例截图（建议16:9） -->
+          <img src="images/case-toy.jpg" alt="毛绒玩具车间示意占位图，上线前替换为真实案例截图">
+          <h3>【玩具厂】电商小程序</h3>
+          <ul>
+            <li><b>痛点：</b>【有产能没线上渠道】</li>
+            <li><b>方案：</b>【分销小程序 + 一件代发对接】</li>
+            <li><b>效果：</b>【待实测】</li>
+          </ul>
+        </article>
+
+        <!-- 案例3：文旅（占位） -->
+        <article class="case">
+          <span class="badge">灯塔案例</span>
+          <!-- 示意占位图：上线前替换为该企业真实案例截图（建议16:9） -->
+          <img src="images/case-travel.jpg" alt="安康山水文旅示意占位图，上线前替换为真实案例截图">
+          <h3>【文旅景区】预约小程序</h3>
+          <ul>
+            <li><b>痛点：</b>【【占位】】</li>
+            <li><b>方案：</b>【【占位】】</li>
+            <li><b>效果：</b>【【占位】】</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- 还没案例时的空状态：做第一个灯塔项目后删掉此块 -->
+      <div class="case-empty" id="caseEmpty">
+        ⚠️ 此区域当前为占位。第一个灯塔项目交付后，按上方结构填写真实案例。
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ ⑤ 关于我 ══════════════ -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <span class="section-tag">ABOUT</span>
+        <!-- 个人形象照占位：替换为本人照片（建议正方形1:1，如 images/me.jpg） -->
+        <img class="avatar" src="images/avatar.png" alt="个人形象照示意占位，替换为本人照片">
+        <h2 class="section-title">关于我</h2>
+        <p>沈川超，安康市汉滨区人，在深圳做 .NET 开发 6 年，做过 ERP、Web 商城、小程序等 C/S 与 B/S 项目。</p>
+        <p>回望家乡，发现富硒食品、毛绒玩具、文旅这些好产业，最缺的是「懂技术又懂本地生意」的人——这就是我做这件事的原因。</p>
+        <ul class="skill-list">
+          <li>C# / .NET</li>
+          <li>SQL Server / MySQL</li>
+          <li>uni-app 小程序</li>
+          <li>Vue</li>
+          <li>ERP / 进销存</li>
+          <li>Web 商城</li>
+        </ul>
+      </div>
+
+      <div class="about-diff">
+        <h3>为什么选我</h3>
+        <ul>
+          <li>本地人，懂富硒、懂玩具、懂安康的生意逻辑</li>
+          <li>深圳大厂标准写代码，比本地小作坊更专业</li>
+          <li>人在深圳、家在安康，双城服务，随叫随到</li>
+          <li>价格透明，先出方案再收费，不满意可谈</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ ⑥ 合作流程 ══════════════ -->
+  <section class="section" id="process" style="background:#EDECE6;">
+    <div class="container">
+      <span class="section-tag">PROCESS</span>
+      <h2 class="section-title">合作流程</h2>
+      <p class="section-sub">流程透明，每个节点都告诉你做到哪一步。</p>
+
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h4>微信沟通</h4><p>说清需求，免费给建议</p></div>
+        <div class="step"><div class="n">2</div><h4>需求确认</h4><p>出方案 + 报价</p></div>
+        <div class="step"><div class="n">3</div><h4>支付定金</h4><p>30% 开工</p></div>
+        <div class="step"><div class="n">4</div><h4>开发交付</h4><p>1-4 周，随时同步</p></div>
+        <div class="step"><div class="n">5</div><h4>上线维护</h4><p>3 个月免费维护</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ ⑦ 联系 CTA ══════════════ -->
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <span class="section-tag">CONTACT</span>
+        <h2 class="section-title">聊聊你的项目</h2>
+        <p>微信：<b>lb2scc</b></p>
+        <p>电话：<a href="tel:18323297554" style="color:var(--primary-dark);font-weight:700;border-bottom:1px solid rgba(31,78,102,0.3);">18323297554</a></p>
+        <p>工作日晚上与周末均可沟通，人在深圳也能远程交付。</p>
+
+        <div class="hook">
+          💡 <b>免费诊断</b>：把你的产品或门店拍照发我，免费出一页溯源 / 电商方案，不成交也没关系。
+        </div>
+
+        <!-- 微信二维码：images/wechat-qr.png -->
+        <div style="margin-top:18px;">
+          <img src="images/wechat-qr.png" alt="沈川超的微信二维码" style="width:180px;height:180px;border-radius:12px;border:1px solid var(--border);background:#FFFFFF;box-shadow:var(--shadow);">
+          <p style="font-size:12px;color:var(--text-3);margin-top:6px;">扫码加微信，免费诊断你的溯源 / 电商方案</p>
+        </div>
+      </div>
+
+      <form class="contact-form" id="leadForm" novalidate>
+        <h3 style="font-size:15px;">留下需求，24 小时内回复</h3>
+        <label for="f-name">称呼</label>
+        <input type="text" id="f-name" name="name" placeholder="怎么称呼您" required>
+
+        <label for="f-phone">电话 / 微信</label>
+        <input type="text" id="f-phone" name="phone" placeholder="方便联系的方式" required>
+
+        <label for="f-msg">需求描述</label>
+        <textarea id="f-msg" name="msg" placeholder="例如：我是做富硒茶的，想要一个扫码溯源+商城的小程序"></textarea>
+
+        <button type="submit" class="btn">提交需求</button>
+        <p id="formTip" style="display:none;margin-top:10px;font-size:12.5px;color:var(--green);"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════ ⑧ 页脚 ══════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    © 2026 沈川超 · 陕ICP备【备案号-占位】号 · <a href="#hero">回到顶部</a>
+  </div>
+</footer>
+
+<!-- 回到顶部按钮 -->
+<button id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---- 移动端菜单开关 ---- */
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    // 点完链接自动收起菜单
+    links.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') {
+        links.classList.remove('open');
+        toggle.textContent = '☰';
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ---- 回到顶部 ---- */
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 480) { backTop.classList.add('show'); }
+    else { backTop.classList.remove('show'); }
+  }, {passive:true});
+  if (backTop) {
+    backTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* ---- 表单占位：部署后替换为真实接口（如飞书表单/邮箱/后端API）---- */
+  var form = document.getElementById('leadForm');
+  var tip = document.getElementById('formTip');
+  if (form && tip) {
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('f-name').value.trim();
+      var phone = document.getElementById('f-phone').value.trim();
+      if (!name || !phone) {
+        tip.style.display = 'block';
+        tip.style.color = '#B25E00';
+        tip.textContent = '请至少填写称呼和联系方式。';
+        return;
+      }
+      // TODO: 部署时在此处接入提交渠道（示例：fetch 到你的后端 / 跳转微信加好友）
+      tip.style.display = 'block';
+      tip.style.color = '#2F6B0F';
+      tip.textContent = '已收到，我会在 24 小时内联系你（演示占位，尚未真实提交）。';
+      form.reset();
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
